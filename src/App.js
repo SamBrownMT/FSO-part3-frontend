@@ -72,7 +72,7 @@ const App = () => {
     const toBeRemoved = event.target.value
     console.log(event.target)
     const deletee = persons.find(person => 
-      person.id === parseInt(toBeRemoved));
+      person.id === toBeRemoved);
     console.log(deletee)
     if(window.confirm(`Do you want to delete ${deletee.name}`))
       {phonebook
