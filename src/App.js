@@ -59,8 +59,11 @@ const App = () => {
         .create(newPerson)
         .then(newbie => {
           setPersons(persons.concat(newbie))
+          setMsg(`${newName} added to phonebook`)
         })
-      setMsg(`${newName} added to phonebook`)
+        .catch(error => {
+          setMsg(error.response.data.error)
+        })
       setTimeout(() => {
         setMsg(null)
       },5000)
